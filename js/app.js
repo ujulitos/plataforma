@@ -11,7 +11,7 @@ var config = {
     measurementId: "G-XGVJBT18BD"
 };
 // var secret = 'fLsL824rAETWsoDveTUMn7xpyUwwBfzhJLKNuEg9';
-var laUrlBase = "VitaeVideos/";
+var laUrlBase = "plataforma/";
 
 firebase.initializeApp(config);
 
