@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+    <meta property="og:title" content="i4L">
+    <meta property="og:description" content="Portafolio i4L">
+    <meta property="og:image" content="http://ideas4learning.com/revision/DEMOS/portafolio/img/logo.png">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/ms-icon-310x310.png">
+    <meta name="msapplication-TileColor" content="#607d8b">
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#607d8b">
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase-database.js"></script>
+
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/sweetalert2.min.css" rel="stylesheet" />
+    <link href="css/semantic.min.css" rel="stylesheet" />
+    <link href="css/dimmer.min.css" rel="stylesheet" />
+    <link href="css/modal.min.css" rel="stylesheet" />
+    <link href="css/now-ui-dashboard.min.css" rel="stylesheet" />
+    <link href="css/nucleo.css" rel="stylesheet" />
+    <link href="css/estilos.css" rel="stylesheet" />
+
+    <!--   Core JS Files   -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/semantic.min.js"></script>
+    <script src="js/dimmer.min.js"></script>
+    <script src="js/modal.min.js"></script>
+    <script src="js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="js/chartjs.min.js"></script>
+    <script src="js/bootstrap-notify.js"></script>
+    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="js/now-ui-dashboard.min.js?v=1.1.0" type="text/javascript"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/md5.pack.js"></script>
+    <script src="js/ApiScorm12.js"></script>
+    <script src="js/app.js"></script>
+
+    <title>MMC</title>
+
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="logo"></div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="active">
+                        <a id="boton_inicio">
+                            <i class="nc-icon-outline ui-1_home-minimal"></i>
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="boton_recursos">
+                            <i class="nc-icon-outline education_books-46"></i>
+                            <p>Contenidos</p>
+                        </a>
+                    </li>
+                    <li class="deshabilitado">
+                        <a id="boton_usuarios">
+                            <i class="nc-icon-outline users_multiple-11"></i>
+                            <p>Usuarios</p>
+                        </a>
+                    </li>
+                    <li class="deshabilitado">
+                        <a id="boton_lecciones">
+                            <i class="nc-icon-outline ui-2_paragraph"></i>
+                            <p>Lecciones</p>
+                        </a>
+                    </li>
+                    <li class="deshabilitado">
+                        <a id="boton_admin">
+                            <i class="nc-icon-outline ui-1_dashboard-29"></i>
+                            <p>Administración</p>
+                        </a>
+                    </li>
+                    <li class="deshabilitado">
+                        <a id="boton_ayuda">
+                            <i class="nc-icon-glyph ui-2_alert"></i>
+                            <p>Ayuda</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="navbar" id="navigation">
+
+                        <div class="perfil">
+                            <i class="nc-icon-outline users_single-05"></i>
+                            <div class="nombre_perfil"></div>
+                        </div>
+
+                        <div id="botonCerrar" class="btn btn-primary btn-round">Cerrar</div>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="panel-header">
+                <div class="header text-center">
+                    <h3 class="title">Catálogo de Recursos</h3>
+                    <p id="subtituloSeccion" class="subtituloSeccion"></p>
+                </div>
+            </div>
+
+            <!-- login -->
+            <div class="page-header-image"></div>
+            <div id="divLogin">
+                <div style="width: 100%; margin-top: 50px; text-align: center; color: #01afd6; font-size: 30px; background-color: #ffffffe6; height: 100px; padding-top: 40px; font-weight: bold;">¡Gracias
+                    por participar!</div>
+                <!-- <div class="col-md-4 ml-auto mr-auto">
+                    <div class="card card-login card-plain">
+                        <form class="form" method="" action="">
+                            <div class="card-header text-center">
+                                <div class="logo-container">
+                                    <div class="logo_ch"></div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="input-group no-border input-lg">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon-outline users_circle-10"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" id="inputUsuario" class="form-control" placeholder="Usuario">
+                                </div>
+                                <div class="input-group no-border input-lg">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon-glyph objects_key-25"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" id="inputPassword" placeholder="Contraseña" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="mensaje_error_login"></div>
+                            <div class="card-footer text-center">
+                                <div id="botonEntrar" class="btn btn-primary btn-round">Entrar</div>-->
+                <!-- <div class="pull-left">
+									<h6>
+										<a href="#pablo" class="link">Create Account</a>
+									</h6>
+								</div>
+								<div class="pull-right">
+									<h6>
+										<a href="#pablo" class="link">Need Help?</a>
+									</h6>
+								</div> -->
+                </form>
+            </div>
+        </div> -->
+    </div>
+    <!-- login -->
+
+
+
+
+    </div>
+
+
+    <div id="contenido" class="contenido">
+        <div id="content" class="content"></div>
+        <div id="barra_player" class="barra_player">
+            <!-- <div class="barra_player_texto">
+						Reproduciendo contenido
+					</div> -->
+            <div id="botonCerrarContenido" class="btn btn-sm btn-primary btn-round">Cerrar Contenido
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+
+
+    <!-- modales -->
+
+    <!-- CerrarContenido -->
+    <div id="modalCerrarContenido" class="ui small basic modal">
+        <h3 class="ui icon header">
+            <i class="nc-icon-outline media-1_button-power"></i>
+            <br><br> Cerrar contenido
+        </h3>
+        <div class="content">
+            <p>¿Seguro que deseas cerrar el contenido?</p>
+        </div>
+        <div class="actions">
+            <div id="botonCancelarCerrarContenido" class="btn btn-primary cancel btn-round" style="margin-right: 20px;">
+                Cancelar
+                <i class="nc-icon-outline ui-1_simple-remove" style="padding-left: 5px;"></i>
+            </div>
+            <div id="botonAceptarCerrarContenido" class="btn btn-success ok btn-round">
+                Aceptar
+                <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+            </div>
+        </div>
+    </div>
+    <!-- CerrarContenido -->
+
+    <!-- CerrarSesion -->
+    <div id="modalCerrarSesion" class="ui small basic modal">
+        <h3 class="ui icon header">
+            <i class="nc-icon-outline media-1_button-power"></i>
+            <br><br> Cerrar Sesión
+        </h3>
+        <div class="content">
+            <p>¿Realmente deseas cerrar tu sesión?</p>
+        </div>
+        <div class="actions">
+            <div id="botonCancelarCerrarSesion" class="btn btn-primary cancel btn-round" style="margin-right: 20px;">
+                Cancelar
+                <i class="nc-icon-outline ui-1_simple-remove" style="padding-left: 5px;"></i>
+            </div>
+            <div id="botonAceptarCerrarSesion" class="btn btn-success ok btn-round">
+                Aceptar
+                <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+            </div>
+        </div>
+    </div>
+    <!-- CerrarSesion -->
+
+
+
+</body>
+
+</html>
