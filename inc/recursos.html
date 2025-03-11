@@ -1,0 +1,351 @@
+<div id="seccionRecursos">
+
+    <div class="container">
+        <!-- <br> -->
+        <div class="grupo_categoria">
+            <p class="titulo_recursos">Recursos</p>
+        </div>
+    </div>
+
+    <div id="catRecursos">
+        <div>
+            <div>
+                <input id="buscadorRecursos" class="form-control form-control2" type="text" placeholder="Buscar..." />
+                <i id="buscadorClean" class="nc-icon-glyph ui-1_simple-remove form-control form-control2"></i>
+            </div>
+        </div>
+        <div class="header">
+            <!-- <h2 class="titulo_seccion">Categorías</h2> -->
+            <div id="categorias" class="lista_categorias"></div>
+        </div>
+    </div>
+
+    <div class="recursos_int"></div>
+
+</div>
+
+
+
+
+
+<div id="secEditarRecurso" class="container pb-5">
+
+    <!-- <div class="row">
+        <div class="col-12 text-right">
+            <button id="botonCancelarRecurso" class="btn btn-naranja btn-round ml-auto">Regresar</button>
+        </div>
+    </div>
+    <br> -->
+
+    <div class="pt-5 pl-5 pr-5 py-5 bg-white rounded">
+
+        <h5 id="titulo_modal_recurso" class="titulo"></h5>
+
+        <br> <br>
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="titulo_label">
+                    <h6 class="input_label">Clave</h6>
+                    <span id="texto_error_claveRec" class="texto_error"></span>
+                </div>
+                <input id="claveRecurso" type="text" class="form-control input_editar claveRecurso" data-maxlength="20" placeholder="Clave del Recurso">
+            </div>
+        </div>
+
+        <br> <br>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="titulo_label">
+                    <h6 class="input_label">Nombre</h6>
+                    <span id="texto_error_nombreRec" class="texto_error"></span>
+                </div>
+                <input id="nombreRecurso" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Nombre del Recurso">
+            </div>
+        </div>
+
+        <!-- Descripción no necesaria -->
+        <!-- <br> <br>
+        <div class="titulo_label">
+            <h6 class="input_label">Descripción</h6>
+            <span id="texto_error_descripcionRec" class="texto_error"></span>
+        </div>
+        <textarea id="editorRecursoDesc" name="content" class="area_editor"></textarea> -->
+        <!-- Descripción no necesaria -->
+
+        <br> <br>
+        <div class="titulo_label">
+            <h6 class="input_label">Duración</h6>
+            <span id="texto_error_duracionRec" class="texto_error"></span>
+            <p class="texto_subtitulo">(minutos)</p>
+        </div>
+        <div class="recurso_duracion">
+            <input id="duracionRecurso" type="text" class="form-control input_duracion" placeholder="Agrega minutos" value="1" minimo="1" required="true" onkeypress="isInputNumber(event)">
+            <div id="botonInputMas" class="btn btn-sm btn-round botonInputMas mas"> <i class="nc-icon-glyph ui-1_bold-add"></i></div>
+            <div id="botonInputMenos" class="btn btn-sm btn-round botonInputMenos menos"> <i class="nc-icon-glyph ui-1_bold-delete"></i></div>
+        </div>
+        <br> <br>
+        <div class="titulo_label">
+            <h6 class="input_label">Tipo</h6>
+            <span id="texto_error_tipoRec" class="texto_error"></span>
+            <!-- <p class="texto_subtitulo">(minutos)</p> -->
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <div class="form-group dropdown bootstrap-select tipoContenido">
+                        <button type="button" id="recTipo0" class="dropdown-toggle form-control select input_select tipoBoton" required="true" data-toggle="dropdown">Selecciona un tipo de Recurso</button>
+                        <div class="dropdown-menu drpodown_tipo"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="titulo_label sec_tipo">
+
+            <!-- recTipoArchivo -->
+            <div class="recTipoArchivo">
+                <h6 class="input_label">Archivo</h6>
+                <span id="texto_error_archivoRec" class="texto_error"></span>
+
+                <p class="texto_subtitulo texto_tipo"></p>
+                <form id="formZip" class="input_archivo _recurso" method="post" enctype="multipart/form-data">
+                    <input id="inputZip" type="file" class="_recurso" accept="" style="width: 100%; padding: 30px;">
+                </form>
+            </div>
+            <!-- recTipoArchivo -->
+
+            <!-- recTipoEntrega -->
+            <div class="recTipoEntrega">
+                <div class="titulo_label">
+                    <h6 class="input_label">Es obligatorio que el Participante entregue:</h6>
+                    <br><br>
+
+                    <div class="row" style="max-width: 200px;">
+
+                        <div class="col-8">
+                            <div>Comentarios</div>
+                            <br>
+                            <div>Documento</div>
+                            <br>
+                            <div>Ambos</div>
+                        </div>
+
+                        <div class="col-4">
+                            <div id="botonRadioEntregable1" class="btn btn-sm btn-toggle btn-radio active" data-toggle="button">
+                                <div class="handle"></div>
+                            </div>
+                            <br><br>
+                            <div id="botonRadioEntregable2" class="btn btn-sm btn-toggle btn-radio" data-toggle="button">
+                                <div class="handle"></div>
+                            </div>
+                            <br><br>
+                            <div id="botonRadioEntregable3" class="btn btn-sm btn-toggle btn-radio" data-toggle="button">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <br><br>
+                <div class="titulo_label">
+                    <h6 class="input_label">Instrucciones</h6>
+                    <span id="texto_error_instrRec" class="texto_error"></span>
+                </div>
+                <textarea id="editorRecursoInstr" name="content" class="area_editor"></textarea>
+                <!-- <br> <br> -->
+
+                <!-- <h6 class="input_label">Calificación</h6>
+                <br> <br>
+                <span class="toggle-label">Manual</span>
+                <div id="botonCalifManual" class="btn btn-sm btn-toggle btn-califManual" data-toggle="button">
+                    <div class="handle"></div>
+                </div>
+                <span class="toggle-label">Automática</span> -->
+            </div>
+            <!-- recTipoEntrega -->
+
+            <!-- recTipoRubrica -->
+            <div class="recTipoRubrica">
+
+                <div class="titulo_label">
+                    <h6 class="input_label">Instrucciones</h6>
+                    <span id="texto_error_instrRubrica" class="texto_error"></span>
+                </div>
+                <textarea id="editorRubricaInstr" name="content" class="area_editor"></textarea>
+                <br> <br>
+
+                <div class="titulo_label">
+                    <h6 class="input_label">Descriptores y Criterios a evaluar</h6>
+                    <span id="texto_error_Rubrica" class="texto_error"></span>
+                </div>
+                <br>
+
+                <div id="laRubrica4x4" class="row row_ch"></div>
+
+            </div>
+            <!-- recTipoRubrica -->
+
+            <!-- recTipoEvaOM -->
+            <div class="recTipoEvaOM">
+
+                <div class="titulo_label">
+                    <h6 class="input_label">Instrucciones</h6>
+                    <span id="texto_error_instrRecEvaOM" class="texto_error"></span>
+                </div>
+                <textarea id="editorEvaOMInstr" name="content" class="area_editor"></textarea>
+                <br> <br>
+
+                <h6 class="input_label">Subir archivo Excel</h6>
+                <span id="texto_error_archivoEvaOM" class="texto_error"></span>
+
+                <p class="texto_subtitulo texto_tipo"></p>
+                <form id="forminputXLSEvaOM" class="input_archivo _recurso" method="post" enctype="multipart/form-data">
+                    <input id="inputXLSEvaOM" type="file" class="_recurso" accept="" style="width: 100%; padding: 30px;">
+                </form>
+                <button type="button" id="uploadExcelEvaOM" class="btn btn-azul btn-round ml-auto">Subir</button>
+                <br><br><br>
+
+                <div class="titulo_label">
+                    <h6 class="input_label">Parámetros:</h6>
+                    <br> <br>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-5" style="margin-left: 15px">
+                            <div class="row">
+                                <div>Preguntas aleatorias</div>
+                                <div id="pregAleatoriasEvaOM" class="btn btn-sm btn-toggle btn-radio btn-si btn-radio-param" data-toggle="button">
+                                    <div class="handle"></div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div>Respuestas aleatorias</div>
+                                <div id="respAleatoriasEvaOM" class="btn btn-sm btn-toggle btn-radio btn-si btn-radio-param" data-toggle="button">
+                                    <div class="handle"></div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div>Todas las preguntas en una pantalla</div>
+                                <div id="pregScrollEvaOM" class="btn btn-sm btn-toggle btn-radio btn-si btn-radio-param" data-toggle="button">
+                                    <div class="handle"></div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div>Retros en pantalla</div>
+                                <div id="respPantallaEvaOM" class="btn btn-sm btn-toggle btn-radio btn-si btn-radio-param" data-toggle="button">
+                                    <div class="handle"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-1">
+                            <br>
+                        </div>
+
+                        <div class="col-12 col-lg-5" style="margin-left: 15px">
+                            <div class="row">
+                                <div>Número de reactivos a presentar
+                                    <p class="texto_subtitulo">(0 = todos)</p>
+                                </div>
+                                <div class="input_generico_der">
+                                    <input id="numReactivosEvaOM" type="text" class="form-control input_generico" placeholder="Agrega número" value="0" minimo="0" required="true" onkeypress="isInputNumber(event)">
+                                    <div id="botonInputMas" class="btn btn-sm btn-round botonInputMas mas"> <i class="nc-icon-glyph ui-1_bold-add"></i></div>
+                                    <div id="botonInputMenos" class="btn btn-sm btn-round botonInputMenos menos"> <i class="nc-icon-glyph ui-1_bold-delete"></i></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>Mínimo aprobatorio</div>
+                                <div class="input_generico_der">
+                                    <input id="minAprobatorioEvaOM" type="text" class="form-control input_generico" placeholder="Agrega número" value="80" minimo="0" maximo="100" required="true" onkeypress="isInputNumber(event)">
+                                    <div id="botonInputMas" class="btn btn-sm btn-round botonInputMas mas"> <i class="nc-icon-glyph ui-1_bold-add"></i></div>
+                                    <div id="botonInputMenos" class="btn btn-sm btn-round botonInputMenos menos"> <i class="nc-icon-glyph ui-1_bold-delete"></i></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>Número de intentos
+                                    <p class="texto_subtitulo">(0 = ilimitados)</p>
+                                </div>
+                                <div class="input_generico_der">
+                                    <input id="numIntentosEvaOM" type="text" class="form-control input_generico" placeholder="Agrega número" value="0" minimo="0" required="true" onkeypress="isInputNumber(event)">
+                                    <div id="botonInputMas" class="btn btn-sm btn-round botonInputMas mas"> <i class="nc-icon-glyph ui-1_bold-add"></i></div>
+                                    <div id="botonInputMenos" class="btn btn-sm btn-round botonInputMenos menos"> <i class="nc-icon-glyph ui-1_bold-delete"></i></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>Tiempo límite
+                                    <p class="texto_subtitulo">(minutos, 0 = ilimitado)</p>
+                                </div>
+                                <div class="input_generico_der">
+                                    <input id="tiempoMaxEvaOM" type="text" class="form-control input_generico" placeholder="Agrega número" value="0" minimo="0" required="true" onkeypress="isInputNumber(event)">
+                                    <div id="botonInputMas" class="btn btn-sm btn-round botonInputMas mas"> <i class="nc-icon-glyph ui-1_bold-add"></i></div>
+                                    <div id="botonInputMenos" class="btn btn-sm btn-round botonInputMenos menos"> <i class="nc-icon-glyph ui-1_bold-delete"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- recTipoEvaOM -->
+
+        </div>
+
+
+
+
+
+        <!-- Portada no necesaria -->
+        <!-- <br> <br>
+        <div class="titulo_label">
+            <h6 class="input_label">Portada</h6>
+            <span id="texto_error_imagenRec" class="texto_error"></span>
+        </div>
+        <p class="texto_subtitulo texto_portada">La imagen para portada debe ser en formato "jpg" o "png".<br>
+            El tamaño mínimo debe ser 200 x 200 pixeles.<br>
+            El archivo debe pesar máximo 5 Mb.</p>
+
+        <form id="formImg" method="post" enctype="multipart/form-data">
+            <div class="input-images"></div>
+        </form> -->
+        <!-- Portada no necesaria -->
+
+        <br> <br>
+        <div class="row">
+            <div class="col-12 text-right">
+                <button id="botonCancelarRecurso" class="btn btn-primary btn-round ml-auto">Cancelar</button>
+                <button id="botonGuardaRecurso" class="btn btn-verde2 btn-round ml-auto">Guardar</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- modalEvaOM -->
+<div id="modalEvaOM" class="ui small basic modal">
+    <h3 class="ui icon header modal_header">
+        <i class="nc-icon-outline design_bullet-list-67"></i>
+        <br><br> Evaluación Opción Múltiple
+    </h3>
+    <div class="content text-center">
+        <p>El formato es correcto<br>Ahora puede guardar la Evaluación</p>
+    </div>
+    <div class="actions text-center">
+
+        <div id="botonOKGpoUsuarios" class="btn btn-verde2 ok btn-round">
+            Aceptar
+            <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+        </div>
+    </div>
+</div>
+<!-- modalEvaOM -->
+
+
+
+<script>
+    activaSecRecursos();
+</script>

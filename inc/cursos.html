@@ -1,0 +1,268 @@
+ <div id="seccionCursos">
+
+     <!-- <div class="header"> -->
+     <div class="container">
+         <!-- <br> -->
+         <div class="grupo_categoria">
+             <p class="titulo_recursos">Cursos</p>
+         </div>
+         <!-- <h2 class="titulo_seccion">Categorías</h2> -->
+         <!-- <div id="categorias" class="lista_categorias"></div> -->
+     </div>
+     <!-- </div> -->
+
+
+     <div class="cursos_int"></div>
+
+
+     <div id="secEditarCurso" class="container py-5">
+
+         <div class="pt-5 pl-5 pr-5 py-0 bg-white rounded">
+             <!-- Rounded tabs -->
+             <h5 id="titulo_modal_curso" class="titulo"></h5>
+             <br>
+             <ul id="tabCursos" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center border-0 rounded-nav">
+                 <li class="nav-item flex-sm-fill">
+                     <a id="botonInfoGral" data-toggle="tab" href="#infoGral" role="tab" aria-selected="true" class="tab_link active ">Información<br>General</a>
+                 </li>
+                 <li class="nav-item flex-sm-fill">
+                     <a id="botonElContenido" data-toggle="tab" href="#elcontenido" role="tab" aria-selected="false" class="tab_link">Contenido<br><br></a>
+                 </li>
+                 <li class="nav-item flex-sm-fill">
+                     <a id="botonInscripcionesAlumnos" data-toggle="tab" href="#inscripcionesAlumnos" role="tab" aria-selected="false" class="tab_link">Inscribir<br>Alumnos</a>
+                 </li>
+                 <li class="nav-item flex-sm-fill">
+                     <a id="botonInscripcionesProfesor" data-toggle="tab" href="#inscripcionesProfesor" role="tab" aria-selected="false" class="tab_link">Inscribir<br>Asesor</a>
+                 </li>
+                 <!-- <li class="nav-item flex-sm-fill">
+                     <a id="botonReportes" data-toggle="tab" href="#reportes" role="tab" aria-selected="false" class="tab_link">Reportes</a>
+                 </li> -->
+             </ul>
+             <br>
+             <div class="grupo_categoria_ch"></div>
+
+             <div id="tabCursosContent" class="tab-content">
+                 <div id="infoGral" role="tabpanel" class="tab-pane fade px-4 py-5 show active">
+                     <!-- <h6 class="titulo">Información General</h5>
+                     <br> <br> -->
+                     <div class="row">
+                         <div class="col-sm-12 col-md-4">
+                             <div class="titulo_label">
+                                 <h6 class="input_label">Clave</h6>
+                                 <span id="texto_error_claveCurso" class="texto_error"></span>
+                             </div>
+                             <input id="claveCurso" type="text" class="form-control input_editar claveCurso" data-maxlength="20" placeholder="Clave del Curso">
+                         </div>
+                     </div>
+
+                     <br> <br>
+                     <div class="row">
+                         <div class="col-sm-12 col-md-6">
+                             <div class="titulo_label">
+                                 <h6 class="input_label">Nombre</h6>
+                                 <span id="texto_error_nombreCurso" class="texto_error"></span>
+                             </div>
+                             <input id="nombreCurso" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Nombre del Curso">
+                         </div>
+                     </div>
+
+                     <br> <br>
+                     <div class="titulo_label">
+                         <h6 class="input_label">Descripción</h6>
+                         <span id="texto_error_descripcionCurso" class="texto_error"></span>
+                     </div>
+                     <input id="descripcionCurso" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Descripción del Curso">
+
+                     <br> <br>
+                     <div class="titulo_label">
+                         <h6 class="input_label">Objetivos</h6>
+                         <span id="texto_error_objetivosCurso" class="texto_error"></span>
+                     </div>
+                     <textarea id="editorObjetivos" name="content" class="area_editor"></textarea>
+                     <br> <br>
+                     <div class="titulo_label">
+                         <h6 class="input_label">Temario</h6>
+                         <span id="texto_error_temarioCurso" class="texto_error"></span>
+                     </div>
+                     <textarea id="editorTemario" name="content" class="area_editor"></textarea>
+
+                     <br> <br>
+                     <div class="titulo_label">
+                         <h6 class="input_label">Con Fechas</h6>
+                         <span id="texto_error_fechasCurso" class="texto_error"></span>
+                     </div>
+                     <div id="botonConFechas" class="btn btn-sm btn-toggle btn-conFechas" data-toggle="button">
+                         <div class="handle"></div>
+                     </div>
+
+                     <br> <br>
+                     <div id="divConFechas" class="col-sm-12 col-md-6 input-daterange input-group">
+                         <h6 class="input-group-addon input_label label_fechas">DE </h6>
+                         <input type="text" class="input-sm form-control input_fechas_1" name="start" />
+                         <h6 class="input-group-addon input_label label_fechas"> A </h6>
+                         <input type="text" class="input-sm form-control input_fechas_2" name="end" />
+                     </div>
+
+                     <br> <br>
+                     <div class="titulo_label">
+                         <h6 class="input_label">Portada</h6>
+                         <span id="texto_error_imagenCurso" class="texto_error"></span>
+                     </div>
+                     <p class="texto_subtitulo">La imagen para portada debe ser en formato "jpg" o "png".<br>
+                         El tamaño mínimo debe ser 200 x 200 pixeles.<br>
+                         El archivo debe pesar máximo 5 Mb.</p>
+
+                     <form id="formImg" method="post" enctype="multipart/form-data">
+                         <div class="input-images"></div>
+                     </form>
+
+                 </div>
+
+                 <div id="elcontenido" role="tabpanel" class="tab-pane fade px-4 py-5">
+
+
+                     <div class="calif_total_row">
+                         <div class="col-md-4 ml-auto mr-0">
+                             <div class="calif_total_contenedor">
+                                 <h6>Calificación Total</h6>
+                                 <span class="calif_total_texto">Tienes <b>100</b> puntos para repartir entre los recursos</span>
+                                 <br>
+                                 <div class="progress calif_total_progress">
+                                     <div class="progress-bar progress-bar-warning calif_total_barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                         <span class="calif_total_valor"><b>100</b></span>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <br>
+
+
+                     <div class="curso_tema">
+                         <h6 class="input_label">Temas</h6>
+                     </div>
+                     <br>
+
+                     <div class="temas_int"></div>
+
+
+                     <button id="botonAgregarTema" class="btn btn-sm btn-round botonAgregarCh" type="button"><i class="nc-icon-glyph ui-1_bold-add"></i>&nbsp; Agregar Tema</button>
+
+
+                 </div>
+
+                 <div id="inscripcionesAlumnos" role="tabpanel" class="tab-pane fade px-4 py-5">
+                     <!-- <h5 class="titulo">Inscribir usuarios</h5>
+                     <br> <br> -->
+                     <!-- tabla usuarios -->
+                     <div class="row">
+                         <div class="col-md-12 ml-auto mr-auto" style="width: 100%;">
+                             <div class="card cardUsuarios">
+                                 <!-- <div class="card-header">
+                                    <h4 class="card-title"></h4>
+                                </div> -->
+                                 <div class="card-body">
+                                     <table id="tablaUsuariosAsig" class="table table-striped dataTable dtr-inline" role="grid" aria-describedby="datatable_info" style="width: 100%;" width="100%" cellspacing="0">
+                                         <thead></thead>
+                                         <tfoot id="tfootUsuAsig"></tfoot>
+                                     </table>
+                                     <div class="toolbar">
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <!-- tabla usuarios -->
+                 </div>
+
+
+                 <div id="inscripcionesProfesor" role="tabpanel" class="tab-pane fade px-4 py-5">
+                     <!-- <h5 class="titulo">Inscribir usuarios</h5>
+                     <br> <br> -->
+                     <!-- tabla usuarios -->
+                     <div class="row">
+                         <div class="col-md-12 ml-auto mr-auto" style="width: 100%;">
+                             <div class="card cardUsuarios">
+                                 <!-- <div class="card-header">
+                                    <h4 class="card-title"></h4>
+                                </div> -->
+                                 <div class="card-body">
+                                     <table id="tablaProfesorAsig" class="table table-striped dataTable dtr-inline" role="grid" aria-describedby="datatable_info" style="width: 100%;" width="100%" cellspacing="0">
+                                         <thead></thead>
+                                         <tfoot id="tfootProfAsig"></tfoot>
+                                     </table>
+                                     <div class="toolbar">
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <!-- tabla profesor -->
+                 </div>
+
+                 <!-- <div id="reportes" role="tabpanel" class="tab-pane fade px-4 py-5"> -->
+                 <!-- <h5 class="titulo">Reportes</h5>
+                     <br> <br> -->
+                 <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+                 <!-- </div> -->
+             </div>
+             <!-- End rounded tabs -->
+
+             <div class="row">
+                 <div class="col-12 text-right">
+                     <span id="texto_error_Curso" class="texto_error"></span>
+                     <span id="texto_error_calif_Curso" class="texto_error"></span>
+                     <br>
+                     <button id="botonCancelarCurso" class="btn btn-naranja btn-round ml-auto">Cancelar</button>
+                     <button id="botonGuardaCurso" class="btn btn-verde2 btn-round ml-auto">Guardar</button>
+                 </div>
+             </div>
+             <br> <br>
+
+         </div>
+
+     </div>
+
+
+ </div>
+
+
+
+
+
+ <!-- modalBorrarCurso -->
+ <div id="modalBorrarCurso" class="ui small basic modal">
+     <h3 class="ui icon header modal_header">
+         <i class="nc-icon-outline education_agenda-bookmark"></i>
+         <br><br> Eliminar Curso
+     </h3>
+     <div class="content text-center">
+         <p>¿Realmente desea eliminar este Curso?</p>
+     </div>
+     <div class="actions text-center">
+         <div id="botonCancelarBorrarCurso" class="btn btn-naranja cancel btn-round botonEntrar">
+             Cancelar
+             <i class="nc-icon-outline ui-1_simple-remove" style="padding-left: 5px;"></i>
+         </div>
+         <div id="botonAceptarBorrarCurso" class="btn btn-verde2 ok btn-round">
+             Aceptar
+             <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+         </div>
+     </div>
+ </div>
+ <!-- modalBorrarCurso -->
+
+
+
+
+
+
+ <script>
+     $('.input-daterange').datepicker({
+         weekStart: 7,
+         language: "es",
+         //  autoclose: true,
+         todayHighlight: true
+     });
+     cuentaCursos();
+ </script>

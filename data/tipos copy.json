@@ -1,0 +1,12 @@
+[ 
+    { "tipo" : "Selecciona una opción" },
+    { "tipo" : "Rúbrica 4x4" },
+    { "tipo" : "Entregable" },
+    { "tipo" : "SCORM" },
+    { "tipo" : "Video" },
+    { "tipo" : "Imagen" },
+    { "tipo" : "Audio" },
+    { "tipo" : "PDF" },
+    { "tipo" : "Word" },
+    { "tipo" : "PowerPoint" }
+]

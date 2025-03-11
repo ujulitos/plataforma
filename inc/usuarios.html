@@ -1,0 +1,238 @@
+<div id="seccionUsuarios">
+
+    <div class="container">
+        <!-- <br> -->
+        <div class="grupo_categoria">
+            <p class="titulo_usuarios">Usuarios</p>
+        </div>
+    </div>
+
+
+    <div class="usuarios_int"></div>
+
+</div>
+
+
+
+<div id="secEditarUsuario" class="container pb-5">
+
+    <form class="pt-5 pl-5 pr-5 py-5 bg-white rounded" id="myForm" action="php/send_mail.php" method="POST">
+
+        <h5 id="titulo_modal_usuario" class="titulo"></h5>
+        <br> <br>
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="titulo_label">
+                    <h6 class="input_label">Clave</h6>
+                    <span id="texto_error_idUsu" class="texto_error"></span>
+                </div>
+                <input id="idUsuario" type="text" class="form-control input_editar idUsuario" data-maxlength="20" placeholder="Clave del Usuario">
+            </div>
+        </div>
+        <br>
+        <!-- <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="titulo_label">
+                    <h6 class="input_label">Clave</h6>
+                    <span id="texto_error_claveUsu" class="texto_error"></span>
+                </div>
+                <input id="claveUsuario" type="text" class="form-control input_editar claveUsuario" data-maxlength="20" placeholder="Clave del Usuario">
+            </div>
+        </div>
+        <br> -->
+        <div class="row">
+            <div class="col-8">
+                <div class="titulo_label">
+                    <h6 class="input_label">Nombre</h6>
+                    <span id="texto_error_nombreUsu" class="texto_error"></span>
+                </div>
+                <input id="nombreUsuario" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Nombre del Usuario" autocomplete="username">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <div class="titulo_label">
+                    <h6 class="input_label">Apellido paterno</h6>
+                    <span id="texto_error_apellidoPatUsu" class="texto_error"></span>
+                </div>
+                <input id="apellidoPatUsuario" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Apellido paterno" autocomplete="apellidoPaterno">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <div class="titulo_label">
+                    <h6 class="input_label">Apellido materno</h6>
+                    <span id="texto_error_apellidoMatUsu" class="texto_error"></span>
+                </div>
+                <input id="apellidoMatUsuario" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Apellido materno" autocomplete="apellidoMaterno">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <div class="titulo_label">
+                    <h6 class="input_label">Correo</h6>
+                    <span id="texto_error_correoUsu" class="texto_error"></span>
+                </div>
+                <input id="correoUsuario" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Correo del Usuario" autocomplete="correo">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <div class="titulo_label">
+                    <h6 class="input_label">Puesto</h6>
+                    <span id="texto_error_puestoUsu" class="texto_error"></span>
+                </div>
+                <input id="puestoUsuario" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Puesto" autocomplete="puesto">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <div class="titulo_label">
+                    <h6 class="input_label">Grupo</h6>
+                    <span id="texto_error_grupoUsu" class="texto_error"></span>
+                </div>
+                <input id="grupoUsuario" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Grupo" autocomplete="grupo">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-5">
+                <div class="titulo_label">
+                    <h6 class="input_label">Perfil</h6>
+                    <span id="texto_error_perfilUsu" class="texto_error"></span>
+                </div>
+                <!-- <input id="nombreRecurso" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Perfil del Usuario"> -->
+                <div class="form-group">
+                    <select id="perfilUsuario" class="form-control input_select perfilesContenido" required="true"></select>
+                </div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-6">
+                <div class="titulo_label">
+                    <h6 class="input_label">Visible</h6>
+                </div>
+                <div id="botonVisibleUsuario" class="btn btn-sm btn-toggle btn-visibleUsuario" data-toggle="button">
+                    <div class="handle"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-5">
+                <div class="titulo_label">
+                    <h6 class="input_label">Contraseña</h6>
+                    <span id="texto_error_contrasenaUsu" class="texto_error"></span>
+                </div>
+                <input id="contrasenaUsuario1" type="password" class="form-control input_editar" data-maxlength="65" placeholder="Contraseña" autocomplete="new-password1">
+                <br>
+                <input id="contrasenaUsuario2" type="password" class="form-control input_editar" data-maxlength="65" placeholder="Confirmar Contraseña" autocomplete="new-password2">
+            </div>
+        </div>
+
+        <br> <br>
+        <div class="row">
+            <div class="col-12 text-right">
+                <button id="botonCancelarUsuario" class="btn btn-primary btn-round ml-auto">Cancelar</button>
+                <button id="botonGuardaUsuario" type="submit" class="btn btn-verde2 btn-round ml-auto">Guardar</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+
+
+<div id="secGrupoUsuarios" class="container pb-5">
+
+    <div class="pt-5 pl-5 pr-5 py-5 bg-white rounded">
+
+        <h5 id="titulo_modal_gpo_usuario" class="titulo"></h5>
+        <br> <br>
+        <div class="row">
+            <div class="col-12">
+                <div class="titulo_label">
+                    <h6 class="input_label">Subir archivo Excel</h6>
+                    <span id="texto_error_GpoUsu" class="texto_error"></span>
+                </div>
+
+                <p class="texto_subtitulo">El archivo debe ser en formato "xls" o "xlsx".
+                    <br>
+                    <a href="docs/formato_usuarios.xlsx">Descargar formato de ejemplo <b>aquí</b></a>
+                </p>
+                <form id="formXSL" class="input_archivo" method="post" enctype="multipart/form-data">
+                    <input type="file" id="fileUpload" accept=".xls,.xlsx" style="width: 100%; padding: 30px;">
+                </form>
+                <button type="button" id="uploadExcel" class="btn btn-azul btn-round ml-auto">Subir</button>
+
+                <!-- <input id="nombreUsuarios" type="text" class="form-control input_editar" data-maxlength="65" placeholder="Nombre del Usuario" autocomplete="username"> -->
+            </div>
+        </div>
+
+        <br> <br>
+        <div class="row">
+            <div class="col-12 text-right">
+                <button id="botonCancelarGpoUsuarios" class="btn btn-primary btn-round ml-auto">Cancelar</button>
+                <button id="botonGuardaGpoUsuarios" type="submit" class="btn btn-verde2 btn-round ml-auto">Guardar</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- modalBorrarUsuario -->
+<div id="modalBorrarUsuario" class="ui small basic modal">
+    <h3 class="ui icon header modal_header">
+        <i class="nc-icon-outline users_single-02"></i>
+        <br><br> Eliminar Usuario
+    </h3>
+    <div class="content text-center">
+        <p>¿Realmente desea eliminar este Usuario?</p>
+    </div>
+    <div class="actions text-center">
+        <div id="botonCancelarBorrarUsuario" class="btn btn-naranja cancel btn-round botonEntrar">
+            Cancelar
+            <i class="nc-icon-outline ui-1_simple-remove" style="padding-left: 5px;"></i>
+        </div>
+        <div id="botonAceptarBorrarUsuario" class="btn btn-verde2 ok btn-round">
+            Aceptar
+            <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+        </div>
+    </div>
+</div>
+<!-- modalBorrarUsuario -->
+
+
+
+<!-- modalOKGpoUsuarios -->
+<div id="modalOKGpoUsuarios" class="ui small basic modal">
+    <h3 class="ui icon header modal_header">
+        <i class="nc-icon-outline users_multiple-11"></i>
+        <br><br> Grupo de Usuarios
+    </h3>
+    <div class="content text-center">
+        <p>El formato es correcto<br>Ahora puede guardar los Usuarios</p>
+    </div>
+    <div class="actions text-center">
+
+        <div id="botonOKGpoUsuarios" class="btn btn-verde2 ok btn-round">
+            Aceptar
+            <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+        </div>
+    </div>
+</div>
+<!-- modalOKGpoUsuarios -->
+
+
+
+<script>
+    activaSecUsuarios();
+</script>

@@ -1,0 +1,10 @@
+[ 
+    { "perfil" : "Selecciona una opción" },
+    { "perfil" : "Multi" },
+    { "perfil" : "SuperAdmin" },
+    { "perfil" : "Administrador" },
+    { "perfil" : "Creador de contenidos" },
+    { "perfil" : "Asesor Académico" },
+    { "perfil" : "Observador" },
+    { "perfil" : "Participante" }   
+]

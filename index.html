@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+    <meta property="og:title" content="Campus Virtual">
+    <meta property="og:description" content="Plataforma de Contenidos de Aprendizaje">
+    <meta property="og:image" content="http://campusdigital360.com/favicon.png">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/ms-icon-310x310.png">
+    <meta name="msapplication-TileColor" content="#607d8b">
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#607d8b">
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/sweetalert2.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="css/semantic.min.css" rel="stylesheet" />
+    <link href="css/dimmer.min.css" rel="stylesheet" />
+    <!-- <link href="css/modal.min.css" rel="stylesheet" /> -->
+    <link href="css/datatables.min.css" rel="stylesheet" />
+    <link href="css/now-ui-dashboard.min.css" rel="stylesheet" />
+    <!-- <link href="css/paper-kit.css" rel="stylesheet" /> -->
+    <link href="css/image-uploader.min.css" rel="stylesheet" />
+    <link href="css/nucleo.css" rel="stylesheet" />
+    <link href="css/toggle.css" rel="stylesheet" />
+    <link href="css/estilos.css" rel="stylesheet" />
+
+    <!--   Core JS Files   -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.all.min.js" charset="UTF-8"></script>
+    <script src="js/semantic.min.js"></script>
+    <script src="js/dimmer.min.js"></script>
+    <!-- <script src="js/modal.min.js"></script> -->
+    <script src="js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="js/chartjs.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js" charset="UTF-8"></script>
+    <script src="js/bootstrap-datepicker.es.js" charset="UTF-8"></script>
+    <script src="js/bootstrap-notify.js"></script>
+    <!-- <script src="js/datatables.min.js"></script> -->
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/buttons.html5.min.js"></script>
+    <script src="js/table2excel.js"></script>
+
+    <script src="js/jszip.min.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+
+    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="js/now-ui-dashboard.min.js?v=1.1.0" type="text/javascript"></script>
+    <script src="js/ckeditor.js"></script>
+    <script src="js/image-uploader.min.js"></script>
+    <script src="js/jquery.dm-uploader.min.js"></script>
+    <script src="js/sortable.min.js"></script>
+    <script src="js/jquery-sortable.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/jspdf.min.js"></script>
+    <script src="js/circle-progress.js"></script>
+    <script src="js/random.min.js"></script>
+    <script src="js/diploma.js"></script>
+    <script src="js/md5.pack.js"></script>
+    <script src="js/xlsx.js"></script>
+    <script src="js/ApiScorm12.js"></script>
+    <script src="js/cxn.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/recursos.js"></script>
+    <script src="js/cursos.js"></script>
+    <script src="js/curso_ver.js"></script>
+    <script src="js/usuarios.js"></script>
+    <script src="js/resultados.js"></script>
+    <script src="js/F_evaluacionOM.js"></script>
+    <script src="js/_REGISTRA.js"></script>
+    <!-- <script src="js/entregas.js"></script> -->
+
+    <title>Campus Digital 360</title>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar sidebar_main">
+            <div class="sidebar-wrapper">
+                <div class="logo_ch"></div>
+                <ul class="nav">
+                    <li class="active">
+                        <a id="boton_inicio">
+                            <i class="nc-icon-outline ui-1_home-minimal"></i>
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="boton_recursos">
+                            <i class="nc-icon-outline design-2_ruler-pencil"></i>
+                            <p>Recursos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="boton_cursos">
+                            <i class="nc-icon-outline education_agenda-bookmark"></i>
+                            <p>Cursos</p>
+                        </a>
+                    </li>
+                    <!-- <li class="deshabilitado">
+                        <a id="boton_usuarios">
+                            <i class="nc-icon-outline users_multiple-11"></i>
+                            <p>Usuarios</p>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a id="boton_usuarios">
+                            <i class="nc-icon-outline users_multiple-11"></i>
+                            <p>Usuarios</p>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a id="boton_admin">
+                            <i class="nc-icon-outline ui-1_dashboard-half"></i>
+                            <p>Administración</p>
+                        </a>
+                    </li> -->
+                    <!-- <li>
+                        <a id="boton_entregas">
+                            <i class="nc-icon-outline files_single-copy-04"></i>
+                            <p>Tareas</p>
+                        </a>
+                    </li> -->
+                    <!-- <li>
+                        <a id="boton_ayuda">
+                            <i class="nc-icon-glyph ui-2_alert"></i>
+                            <p>Ayuda</p>
+                        </a>
+                    </li> -->
+
+                </ul>
+            </div>
+            <!-- <div class="poweredby" onclick="javascript:window.open('https://muchofocus.com', '_blank')">Creado por:
+                <div class="poweredby_logo">
+                    <img src="img/poweredby_logo.png" alt="focus logo">
+                </div>
+            </div> -->
+
+        </div>
+
+
+        <div id="botonOcultarSidebar" class="boton_sidebar">
+            <span class="material-symbols-outlined">menu</span>
+            <div class="boton_sidebar_texto">Mostrar</div>
+        </div>
+
+
+        <div class="sidebar sidebar_curso">
+            <div class="sidebar-wrapper">
+
+                <!-- Sidebar navigation -->
+                <div id="slide-out" class="side-nav fixed side-nav_curso">
+                    <div id="|" data-scrollbar>
+
+                        <div class="logo-wrapper">
+                            <div class="titulo_div">
+                                <!-- <img src="img/logo.png" class="img-fluid flex-center"> -->
+                                <div id="cursoTitulo" class="el_curso_titulo"></div>
+                                <div id="cursoSubtitulo" class="el_curso_subtitulo"></div>
+                            </div>
+                            <div class="progreso_div">
+                                <div id="progreso_tot" class="progreso_tot"></div>
+                                <div id="progreso_act" class="progreso_act"></div>
+                                <div id="progreso_calif" class="progreso_calif"></div>
+                                <div id="progreso_texto" class="progreso_texto"></div>
+                            </div>
+                        </div>
+
+                        <div class="titulo_temas">
+                            <div>TEMARIO</div>
+                        </div>
+
+                        <!-- Temas -->
+                        <div id="temas"></div>
+                        <!--/. Temas -->
+
+                        <div class="sidenav-bg mask-strong"></div>
+                    </div>
+                    <!--/. Sidebar navigation -->
+
+                </div>
+            </div>
+        </div>
+
+        <div id="botonOcultarTemas" class="boton_temas">
+            <span class="material-symbols-outlined">menu</span>
+            <div class="boton_temas_texto"></div>
+        </div>
+
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <div class="container-fluid">
+                    <!-- <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                    </div> -->
+
+                    <div class="navbar" id="navigation">
+
+                        <div class="nav-item dropdown">
+                            <button id="botonPerfil" class="dropdown-toggle btn btn-transparente btn-round" data-toggle="dropdown" aria-expanded="false">
+                                <i class="nc-icon-outline users_single-05"></i>
+                                <span class="nombre_perfil"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <!-- <div class="dropdown-header">Dropdown header</div> -->
+                                <!-- <a class="dropdown-item" href="javascript:;">Mi Perfil</a> -->
+                                <!-- <a class="dropdown-item" href="javascript:;">Mis Notificaciones <span class="badge badge-pill badge-info notification-bubble">2</span></a> -->
+
+                                <!-- <div class="dropdown-divider"></div> -->
+                                <a id="botonCerrar" class="dropdown-item" href="javascript:;">Cerrar Sesión</a>
+                            </ul>
+                        </div>
+
+                        <!-- <div class="perfil">
+                            <i class="nc-icon-outline users_single-05"></i>
+                            <div class="nombre_perfil"></div>
+                        </div> -->
+
+                        <!-- <div id="botonCerrar" class="btn btn-danger btn-round">Cerrar</div> -->
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="panel-header">
+                <div class="header text-center">
+                    <h4 class="title">
+                        Campus Virtual
+                    </h4>
+                    <p id="subtituloSeccion" class="subtituloSeccion"></p>
+                </div>
+            </div>
+
+            <!-- login -->
+            <div class="page-header-image">
+                <!-- <video class="videoFondo" playsinline autoplay muted loop>
+                    <source src="img/login.mp4" type="video/mp4">
+                </video> -->
+            </div>
+
+            <div id="divLogin">
+                <div class="col-md-4 ml-auto mr-auto">
+                    <div class="card card-login card-plain">
+                        <form class="form" method="" action="">
+                            <div class="card-header text-center">
+                                <div class="logo"></div>
+                            </div>
+                            <div class="card-body">
+                                <div class="input-group no-border input-lg">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text input_prepend">
+                                            <i class="nc-icon-outline users_circle-10"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" id="inputUsuario" class="form-control" placeholder="Usuario" autocomplete="username">
+                                </div>
+                                <div class="input-group no-border input-lg">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text input_prepend">
+                                            <i class="nc-icon-glyph objects_key-25"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" id="inputPassword" placeholder="Contraseña" class="form-control" autocomplete="current-password" />
+                                </div>
+                            </div>
+                            <div class="mensaje_error_login"></div>
+                            <div class="card-footer text-center">
+                                <div id="botonEntrar" class="btn btn-naranja btn-round">Entrar</div>
+                                <!-- <div class="pull-left">
+									<h6>
+										<a href="#pablo" class="link">Create Account</a>
+									</h6>
+								</div>
+								<div class="pull-right">
+									<h6>
+										<a href="#pablo" class="link">Need Help?</a>
+									</h6>
+								</div> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- login -->
+
+
+
+
+        </div>
+
+
+        <div id="contenido" class="contenido">
+            <div id="content" class="content"></div>
+            <div id="barra_player" class="barra_player">
+                <div class="barra_player_texto">
+                    <!-- Reproduciendo contenido -->
+                </div>
+
+                <!-- <div id="botonRecAnterior" class="btn btn-sm btn-azul btn-round boton_anterior">
+                    <i class="nc-icon-outline arrows-1_minimal-left"></i>
+                    Anterior
+                </div> -->
+                <!-- <div id="botonRecSiguiente" class="btn btn-sm btn-azul btn-round boton_siguiente">
+                    Siguiente
+                    <i class="nc-icon-outline arrows-1_minimal-right"></i>
+                </div> -->
+
+                <div class="div_flex div_right">
+
+                    <div class="perfil div_perfil_int">
+                        <!-- <i class="nc-icon-outline users_single-05"></i> -->
+                        <span class="nombre_perfil_int"></span>
+                    </div>
+
+                    <div id="botonCerrarContenido" class="btn btn-sm btn-naranja btn-round">Cerrar</div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+
+
+    <!-- modales -->
+
+    <!-- CerrarContenido -->
+    <div id="modalCerrarContenido" class="ui small basic modal">
+        <h3 class="ui icon header">
+            <i class="nc-icon-outline media-1_button-power"></i>
+            <br><br> Salir del curso
+        </h3>
+        <div class="content text-center">
+            <p>
+                ¿Seguro que deseas salir del curso?
+                <br>
+                Serás redireccionado a tus cursos disponibles.
+            </p>
+        </div>
+        <div class="actions text-center">
+            <div id="botonCancelarCerrarContenido" class="btn btn-naranja cancel btn-round" style="margin-right: 20px;">
+                Cancelar
+                <i class="nc-icon-outline ui-1_simple-remove" style="padding-left: 5px;"></i>
+            </div>
+            <div id="botonAceptarCerrarContenido" class="btn btn-verde2 ok btn-round">
+                Aceptar
+                <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+            </div>
+        </div>
+    </div>
+    <!-- CerrarContenido -->
+
+    <!-- CerrarSesion -->
+    <div id="modalCerrarSesion" class="ui small basic modal">
+        <h3 class="ui icon header">
+            <i class="nc-icon-outline media-1_button-power"></i>
+            <br><br> Cerrar sesión de estudio en campus
+        </h3>
+        <div class="content text-center">
+            <p>¿Realmente deseas cerrar tu sesión de estudio?</p>
+        </div>
+        <div class="actions text-center">
+            <div id="botonCancelarCerrarSesion" class="btn btn-naranja cancel btn-round" style="margin-right: 20px;">
+                Cancelar
+                <i class="nc-icon-outline ui-1_simple-remove" style="padding-left: 5px;"></i>
+            </div>
+            <div id="botonAceptarCerrarSesion" class="btn btn-verde2 ok btn-round">
+                Aceptar
+                <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+            </div>
+        </div>
+    </div>
+    <!-- CerrarSesion -->
+
+
+    <!-- modalBorrarRecurso -->
+    <div id="modalBorrarRecurso" class="ui small basic modal">
+        <h3 class="ui icon header modal_header">
+            <i class="nc-icon-outline design-2_ruler-pencil"></i>
+            <br><br> Eliminar Recurso
+        </h3>
+        <div class="content text-center">
+            <p>¿Realmente desea eliminar este Recurso?</p>
+        </div>
+        <div class="actions text-center">
+            <div id="botonCancelarBorrarRecurso" class="btn btn-naranja cancel btn-round botonEntrar">
+                Cancelar
+                <i class="nc-icon-outline ui-1_simple-remove" style="padding-left: 5px;"></i>
+            </div>
+            <div id="botonAceptarBorrarRecurso" class="btn btn-verde2 ok btn-round">
+                Aceptar
+                <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+            </div>
+        </div>
+    </div>
+    <!-- modalBorrarRecurso -->
+
+
+    <!-- modalVerRecurso -->
+    <div class="modal fade" id="modalVerRecurso" tabindex="-1" role="dialog" aria-hidden="true">
+        <div id="modalVerRecursoDialog" class="modal-dialog modal-xl" role="document">
+            <div id="modalVerRecursoContent" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="objetoTitulo"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="modalVerRecurso_body" class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+    <!-- modalVerRecurso -->
+
+
+    <!-- modalSubirEntregable -->
+    <div id="modalSubirEntregable" class="ui small basic modal">
+        <h3 class="ui icon header modal_header">
+            <i class="nc-icon-outline design-2_ruler-pencil"></i>
+            <br><br> Entregar tarea
+        </h3>
+        <div class="content text-center">
+            <p>¿Confirmas tu entrega?</p>
+            <p>Una vez que confirmes, tu tarea quedará entregada y será calificada.</p>
+        </div>
+        <div class="actions text-center">
+            <div id="botonCancelarSubirEntregable" class="btn btn-naranja cancel btn-round botonEntrar">
+                Cancelar
+                <i class="nc-icon-outline ui-1_simple-remove" style="padding-left: 5px;"></i>
+            </div>
+            <div id="botonAceptarSubirEntregable" class="btn btn-verde2 ok btn-round">
+                Aceptar
+                <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+            </div>
+        </div>
+    </div>
+    <!-- modalSubirEntregable -->
+
+
+    <!-- modalCalificarEntregable -->
+    <div id="modalCalificarEntregable" class="ui small basic modal">
+        <h3 class="ui icon header modal_header">
+            <i class="nc-icon-outline design-2_ruler-pencil"></i>
+            <br><br> Enviar Retroalimentación
+        </h3>
+        <div class="content text-center">
+            <p>¿Confirmas enviar tu retroalimentación?</p>
+            <p>Una vez que confirmes, la tarea quedará calificada.</p>
+        </div>
+        <div class="actions text-center">
+            <div id="botonCancelarCalificarEntregable" class="btn btn-naranja cancel btn-round botonEntrar">
+                Cancelar
+                <i class="nc-icon-outline ui-1_simple-remove" style="padding-left: 5px;"></i>
+            </div>
+            <div id="botonAceptarCalificarEntregable" class="btn btn-verde2 ok btn-round">
+                Aceptar
+                <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+            </div>
+        </div>
+    </div>
+    <!-- modalCalificarEntregable -->
+
+
+    <!-- modalCalificarEntrega -->
+    <div class="modal fade" id="modalCalificarEntrega" tabindex="-1" role="dialog" aria-hidden="true">
+        <div id="modalCalificarEntregaDialog" class="modal-dialog modal-xl" role="document">
+            <div id="modalCalificarEntregaContent" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="objetoTitulo"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="modalCalificarEntrega_body" class="modal-body"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- modalCalificarEntrega -->
+
+
+    <!-- modalSubirComentario -->
+    <div id="modalSubirComentario" class="ui small basic modal">
+        <h3 class="ui icon header modal_header">
+            <i class="nc-icon-outline ui-2_chat-round"></i>
+            <br><br> Subir Comentario
+        </h3>
+        <div class="content text-center">
+            <p>¿Confirmas tu comentario?</p>
+            <p>Una vez que confirmes, tu comentario quedará guardado y será calificado.</p>
+        </div>
+        <div class="actions text-center">
+            <div id="botonCancelarSubirComentario" class="btn btn-naranja cancel btn-round botonEntrar">
+                Cancelar
+                <i class="nc-icon-outline ui-1_simple-remove" style="padding-left: 5px;"></i>
+            </div>
+            <div id="botonAceptarSubirComentario" class="btn btn-verde2 ok btn-round">
+                Aceptar
+                <i class="nc-icon-outline ui-1_check" style="padding-left: 5px;"></i>
+            </div>
+        </div>
+    </div>
+    <!-- modalSubirComentario -->
+
+
+
+    <div id="elDiplomaDIV"></div>
+
+
+
+    <!-- cargando -->
+    <div id="cargando">
+        <div class="ui active dimmer">
+            <div class="ui text loader">Cargando</div>
+        </div>
+    </div>
+    <!-- cargando -->
+
+</body>
+
+</html>
